@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:meditation_app/screens/details_screen.dart';
 import './constants.dart';
 import './widgets/category_card.dart';
 import './widgets/bottom_navbar.dart';
+import './widgets/search_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -71,21 +73,7 @@ class HomeScreen extends StatelessWidget {
                           .displaySmall
                           ?.copyWith(fontWeight: FontWeight.w900),
                     ),
-                    Container(
-                      margin: EdgeInsets.symmetric(vertical: 30),
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 30, vertical: 5),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(29.5)),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          hintText: "Search",
-                          icon: SvgPicture.asset("assets/icons/search.svg"),
-                          border: InputBorder.none,
-                        ),
-                      ),
-                    ),
+                    SearchBarWidget(),
                     Expanded(
                       child: GridView.count(
                         crossAxisCount: 2,
@@ -96,22 +84,46 @@ class HomeScreen extends StatelessWidget {
                           categoryCard(
                             svgSrc: "assets/icons/Hamburger.svg",
                             title: "Diet Recommendation",
-                            press: () {},
+                            press: () {
+                              Navigator.push(context, MaterialPageRoute(
+                                builder: (context) {
+                                  return DetailsScreen();
+                                },
+                              ));
+                            },
                           ),
                           categoryCard(
                             svgSrc: "assets/icons/Excrecises.svg",
                             title: "Kegel Excersices",
-                            press: () {},
+                            press: () {
+                              Navigator.push(context, MaterialPageRoute(
+                                builder: (context) {
+                                  return DetailsScreen();
+                                },
+                              ));
+                            },
                           ),
                           categoryCard(
                             svgSrc: "assets/icons/Meditation.svg",
                             title: "Meditation",
-                            press: () {},
+                            press: () {
+                              Navigator.push(context, MaterialPageRoute(
+                                builder: (context) {
+                                  return DetailsScreen();
+                                },
+                              ));
+                            },
                           ),
                           categoryCard(
                             svgSrc: "assets/icons/yoga.svg",
                             title: "Yoga",
-                            press: () {},
+                            press: () {
+                              Navigator.push(context, MaterialPageRoute(
+                                builder: (context) {
+                                  return DetailsScreen();
+                                },
+                              ));
+                            },
                           ),
                         ],
                       ),
